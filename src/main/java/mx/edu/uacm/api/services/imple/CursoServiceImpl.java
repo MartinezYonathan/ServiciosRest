@@ -2,10 +2,13 @@ package mx.edu.uacm.api.services.imple;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import mx.edu.uacm.api.domain.Curso;
 import mx.edu.uacm.api.persistencia.CursoRepository;
 import mx.edu.uacm.api.services.CursoService;
 
+@Service
 public class CursoServiceImpl implements CursoService {
 
 	CursoRepository cursoRepository;
