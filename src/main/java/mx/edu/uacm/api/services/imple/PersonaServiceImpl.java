@@ -37,8 +37,8 @@ public class PersonaServiceImpl implements PersonaService {
 		log.debug("-------------------------------------------------------");
 		log.debug("-SER--PER------------  Entrando al metodo borrarPersona");
 
-		 personaRepository.deleteById(id);
-		 
+		personaRepository.deleteById(id);
+
 		return "Persona Borrada";
 	}
 
