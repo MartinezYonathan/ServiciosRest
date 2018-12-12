@@ -23,9 +23,9 @@ public class CursoServiceImpl implements CursoService {
 	}
 
 	@Override
-	public String borrarCurso(Curso curso) {
+	public String borrarCurso(Long id) {
 		// TODO Auto-generated method stub
-		cursoRepository.delete(curso);
+		cursoRepository.deleteById(id);
 		return "Curso Borrado";
 	}
 
@@ -36,7 +36,7 @@ public class CursoServiceImpl implements CursoService {
 	}
 
 	@Override
-	public List<Curso> mostrarCurso() {
+	public List<Curso> mostrarCursos() {
 		// TODO Auto-generated method stub
 		return (List<Curso>) cursoRepository.findAll();
 	}

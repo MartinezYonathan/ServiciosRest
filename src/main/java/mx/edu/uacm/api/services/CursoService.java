@@ -6,7 +6,7 @@ import mx.edu.uacm.api.domain.Curso;
 public interface CursoService {
 	public Curso guardarCurso(Curso curso);
 	public Curso editarCurso(Curso curso);
-	public String borrarCurso(Curso curso);
+	public String borrarCurso(Long id);
 	public Curso mostrarCurso(Long id);
-	public List<Curso> mostrarCurso();
+	public List<Curso> mostrarCursos();
 }
