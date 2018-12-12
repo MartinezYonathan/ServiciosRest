@@ -9,5 +9,5 @@ public interface PersonaService {
 	public Persona editaPersona(Persona persona);
 	public String borrarPersona(Long id);
 	public Persona mostrarPersona(Long id);
-	public List<Persona> mostrarPersona();
+	public List<Persona> mostrarPersonas();
 }
