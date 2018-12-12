@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import mx.edu.uacm.api.controller.CursoController;
 import mx.edu.uacm.api.domain.Persona;
 import mx.edu.uacm.api.persistencia.PersonaRepository;
 import mx.edu.uacm.api.services.PersonaService;
@@ -14,7 +13,7 @@ import mx.edu.uacm.api.services.PersonaService;
 @Service
 public class PersonaServiceImpl implements PersonaService {
 
-	public static final Logger log = LogManager.getLogger(CursoController.class);
+	public static final Logger log = LogManager.getLogger(PersonaServiceImpl.class);
 
 	PersonaRepository personaRepository;
 

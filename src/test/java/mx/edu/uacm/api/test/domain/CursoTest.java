@@ -18,8 +18,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import mx.edu.uacm.api.ServiciosRestApplication;
-import mx.edu.uacm.api.domain.Curso;
-import mx.edu.uacm.api.persistencia.CursoRepository;
+import mx.edu.uacm.api.domain.Taller;
+import mx.edu.uacm.api.persistencia.TallerRepository;
 
 /**
  * @author christian
@@ -43,7 +43,7 @@ public class CursoTest {
 	// el logger se importa el de apache
 	@Autowired // utilizamos la inyeccion de dependencias para inyectar
 	// la implemetacion de la interfaz
-	CursoRepository cursoRepository;// es una interfaz
+	TallerRepository tallerRepository;// es una interfaz
 	// el primer test
 
 	@Test // se importa el de junit
@@ -51,16 +51,16 @@ public class CursoTest {
 		log.debug("-------------------------------------------------------");
 		log.debug("--------------------Entrando al metodo testGuardarCurso");
 
-		Curso curso = new Curso();
-		curso.setNombre("mi primer curso");
-		curso.setDescripcion("curso inicial");
+		Taller taller = new Taller();
+		taller.setNombre("mi primer curso");
+		taller.setDescripcion("curso inicial");
 
 		// recuerda que estamos usando una BD h2 = en memoria
-		Curso cursoReturn = cursoRepository.save(curso);// guardamos un curso en la base de datos
+		Taller tallerReturn = tallerRepository.save(taller);// guardamos un curso en la base de datos
 
 		// Con ester assert verificamos que el objeto retornado no es null
-		// y con esto nos aseguramos que esta funcionado la clase Curso
-		Assert.assertThat(cursoReturn, is(notNullValue()));
+		// y con esto nos aseguramos que esta funcionado la clase Taller
+		Assert.assertThat(tallerReturn, is(notNullValue()));
 	}
 
 }

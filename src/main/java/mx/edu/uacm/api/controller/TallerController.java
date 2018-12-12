@@ -17,59 +17,59 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import mx.edu.uacm.api.domain.Curso;
-import mx.edu.uacm.api.services.CursoService;
+import mx.edu.uacm.api.domain.Taller;
+import mx.edu.uacm.api.services.TallerService;
 
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping(value = { "/api" })
-public class CursoController {
+public class TallerController {
 
-	public static final Logger log = LogManager.getLogger(CursoController.class);
+	public static final Logger log = LogManager.getLogger(TallerController.class);
 
 	@Autowired
-	CursoService cursoService;
+	TallerService tallerService;
 
 	@GetMapping("/curso")
-	public List<Curso> getAllCursos() {
+	public List<Taller> getAllCursos() {
 		log.debug("-------------------------------------------------------");
 		log.debug("-CON--CUR------------   Entrando al metodo getAllCursos");
 
-		return cursoService.mostrarCursos();
+		return tallerService.mostrarTaller();
 	}
 
 	@GetMapping("/curso/{id}")
-	public Curso getCurso(@PathVariable String id) {
+	public Taller getCurso(@PathVariable String id) {
 		log.debug("-------------------------------------------------------");
 		log.debug("-CON--CUR-------------   Entrando al metodo getCurso");
 
-		return cursoService.mostrarCurso(Long.parseLong(id));
+		return tallerService.mostrarTaller(Long.parseLong(id));
 	}
 
 	@PostMapping("/curso")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Curso addCurso(@RequestBody Curso curso) {
+	public Taller addCurso(@RequestBody Taller taller) {
 		log.debug("-------------------------------------------------------");
 		log.debug("-CON--CUR------------       Entrando al metodo addCurso");
 
-		return cursoService.guardarCurso(curso);
+		return tallerService.guardarTaller(taller);
 	}
 
 	@PutMapping("/curso")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Curso updateCurso(@RequestBody Curso curso) {
+	public Taller updateCurso(@RequestBody Taller taller) {
 		log.debug("-------------------------------------------------------");
 		log.debug("-CON--CUR------------    Entrando al metodo updateCurso");
 
-		return cursoService.editarCurso(curso);
+		return tallerService.editarTaller(taller);
 	}
-	
+
 	@DeleteMapping("/curso/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteCurso(@PathVariable String id) {
 		log.debug("-------------------------------------------------------");
 		log.debug("-CON--CUR------------    Entrando al metodo deleteCurso");
 
-		cursoService.borrarCurso(Long.parseLong(id));
+		tallerService.borrarTaller(Long.parseLong(id));
 	}
 }

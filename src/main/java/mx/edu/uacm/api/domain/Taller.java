@@ -15,7 +15,7 @@ import javax.persistence.Id;
  */
 //JPA Implementacion de java Persistence API (JPA) con Hibernate
 @Entity  //javax.persistence.Entity
-public class Curso {
+public class Taller {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

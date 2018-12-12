@@ -25,7 +25,7 @@ import mx.edu.uacm.api.services.PersonaService;
 @RequestMapping(value = { "/api" })
 public class PersonaController {
 
-	public static final Logger log = LogManager.getLogger(CursoController.class);
+	public static final Logger log = LogManager.getLogger(PersonaController.class);
 
 	@Autowired
 	PersonaService personaService;
