@@ -13,13 +13,13 @@ import javax.persistence.Id;
  * @author christian
  *
  */
-//JPA ImplementaciÃ³n de java Persistence API (JPA) con Hibernate
+//JPA Implementacion de java Persistence API (JPA) con Hibernate
 @Entity  //javax.persistence.Entity
 public class Curso {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	//que se genere automÃ¡ticamente el id
+	//que se genere automaticamente el id
 	private Long id;
 	
 	@Column
