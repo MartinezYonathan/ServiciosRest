@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
 import mx.edu.uacm.api.domain.Taller;
 import mx.edu.uacm.api.services.TallerService;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+//@CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping(value = { "/api" })
 public class TallerController {
@@ -30,6 +30,7 @@ public class TallerController {
 	@Autowired
 	TallerService tallerService;
 
+	@ApiOperation(value="obtiene una cadena de saludo")
 	@GetMapping("/curso")
 	public List<Taller> getAllCursos() {
 		log.debug("-------------------------------------------------------");

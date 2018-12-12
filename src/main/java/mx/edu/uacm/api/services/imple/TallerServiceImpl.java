@@ -2,6 +2,7 @@ package mx.edu.uacm.api.services.imple;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mx.edu.uacm.api.domain.Taller;
@@ -11,6 +12,7 @@ import mx.edu.uacm.api.services.TallerService;
 @Service
 public class TallerServiceImpl implements TallerService {
 
+	@Autowired
 	TallerRepository tallerRepository;
 
 	@Override
