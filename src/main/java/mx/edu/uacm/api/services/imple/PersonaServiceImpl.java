@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mx.edu.uacm.api.domain.Persona;
@@ -15,6 +16,7 @@ public class PersonaServiceImpl implements PersonaService {
 
 	public static final Logger log = LogManager.getLogger(PersonaServiceImpl.class);
 
+	@Autowired
 	PersonaRepository personaRepository;
 
 	@Override
@@ -51,7 +53,7 @@ public class PersonaServiceImpl implements PersonaService {
 	@Override
 	public List<Persona> mostrarPersonas() {
 		log.debug("-------------------------------------------------------");
-		log.debug("-SER--PER------------ Entrando al metodo guardarPersona");
+		log.debug("-SER--PER------------Entrando al metodo mostrarPersonas");
 		return (List<Persona>) personaRepository.findAll();
 	}
 

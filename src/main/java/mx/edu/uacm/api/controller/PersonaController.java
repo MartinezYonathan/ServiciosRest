@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
 import mx.edu.uacm.api.domain.Persona;
 import mx.edu.uacm.api.services.PersonaService;
 
@@ -29,6 +30,7 @@ public class PersonaController {
 	@Autowired
 	PersonaService personaService;
 
+	@ApiOperation(value="obtiene todas las personas")
 	@GetMapping("/persona")
 	public List<Persona> getAllPersona() {
 		log.debug("-------------------------------------------------------");
@@ -45,6 +47,7 @@ public class PersonaController {
 		return personaService.mostrarPersona(Long.parseLong(id));
 	}
 
+	@ApiOperation(value="Agrega a una persona sin ID, la hibernate lo asigna")
 	@PostMapping("/persona")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Persona addPersona(@RequestBody Persona persona) {
